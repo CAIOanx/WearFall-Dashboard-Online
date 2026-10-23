@@ -26,7 +26,7 @@ function formatUptime(ms) {
 }
 function eventStatus(event) {
   if (event.cancelado) return "CANCELADO";
-  if (event.quedaConfirmada ?? event.confirmada) return "SIMULADA";
+  if (event.quedaConfirmada ?? event.confirmada) return "ALERTA";
   return "DESCARTADA";
 }
 function showHistory(history) {
@@ -35,7 +35,7 @@ function showHistory(history) {
     const status = eventStatus(event);
     const fields = [
       formatUptime(event.tempoMs ?? event.tempo ?? event.millis),
-      status === "SIMULADA" ? "Possível queda (simulada)" : status === "CANCELADO" ? "Alerta cancelado" : "Evento descartado",
+      status === "ALERTA" ? "Possível queda" : status === "CANCELADO" ? "Alerta cancelado" : "Evento descartado",
       status,
       `Rotação: ${event.rotacao ? "sim" : "não"} · Postura: ${event.postura ? "sim" : "não"} · Imobilidade: ${event.imobilidade ? "sim" : "não"}`
     ];
@@ -43,7 +43,7 @@ function showHistory(history) {
       const td = document.createElement("td");
       if (i === 2) {
         const b = document.createElement("b");
-        b.className = status === "SIMULADA" ? "warning-text" : status === "CANCELADO" ? "cancel" : "ok";
+        b.className = status === "ALERTA" ? "warning-text" : status === "CANCELADO" ? "cancel" : "ok";
         b.textContent = value;
         td.appendChild(b);
       } else td.textContent = value;
@@ -58,7 +58,7 @@ function showHistory(history) {
       const tr = document.createElement("tr");
       const td = document.createElement("td");
       td.colSpan = 4;
-      td.textContent = "Nenhum evento demonstrativo registrado nesta sessão.";
+      td.textContent = "Nenhum evento registrado nesta sessão.";
       tr.appendChild(td);
       tbody.appendChild(tr);
     }
@@ -85,10 +85,10 @@ function updateConnection(isConnected) {
   online = isConnected;
   const el = document.getElementById("connection");
   el.className = `online ${isConnected ? "connected" : "offline"}`;
-  el.textContent = isConnected ? "● MODO DEMONSTRAÇÃO" : "● MODO DEMONSTRAÇÃO";
-  setText("deviceConnection", isConnected ? "Simulado" : "Sem dados");
-  setText("deviceConnectionUser", isConnected ? "Simulado" : "Sem dados");
-  setText("monitorUser", isConnected ? "Demonstração" : "Sem dados");
+  el.textContent = isConnected ? "● PAINEL ATIVO" : "● PAINEL INDISPONÍVEL";
+  setText("deviceConnection", isConnected ? "Modo de apresentação" : "Sem dados");
+  setText("deviceConnectionUser", isConnected ? "Modo de apresentação" : "Sem dados");
+  setText("monitorUser", isConnected ? "Monitorando" : "Sem dados");
   if (!isConnected) {
     lastStatus = null;
     setText("monitorIcon", "…");
@@ -107,23 +107,23 @@ function updateStatus(data) {
   setText("battery", data.bateria === null || data.bateria === undefined ? "Não medida" : `${data.bateria}%`);
   setText("monitorIcon", alert ? "!" : "✓");
   setText("monitorTitle", alert ? "Alerta ativo" : "Monitoramento ativo");
-  setText("monitorDescription", alert ? "Simulação de uma possível queda (sem leitura do sensor)." : `Estado demonstrativo: ${raw || "MONITORANDO"}`);
+  setText("monitorDescription", alert ? "Possível queda identificada no teste." : `Estado atual: ${raw || "MONITORANDO"}`);
   document.getElementById("cancel").disabled = !alert;
   setPanel("status", alert ? "status warning" : "status normal", alert ? "⚠" : "✓",
     alert ? "POSSÍVEL QUEDA" : raw || "MONITORANDO",
-    alert ? "Alerta apenas ilustrativo: nenhum evento real detectado." : "Sem alerta ativo na demonstração.");
+    alert ? "Alerta de teste ativado." : "Nenhum alerta ativo.");
   setPanel("alertPage", alert ? "alert active" : "alert empty", null,
     alert ? "⚠ POSSÍVEL QUEDA DETECTADA" : "Nenhum alerta ativo",
-    alert ? "Alerta apenas ilustrativo: nenhum evento real detectado." : "Nenhum alerta ativo na simulação.");
+    alert ? "Alerta de teste ativado." : "Nenhum alerta ativo.");
 }
 function updateLastAlert() {
   const recent = lastHistory.find(e => e.quedaConfirmada === true || e.confirmada === true);
   setPanel("lastAlert", "alert empty", null,
-    recent ? "Última possível queda simulada" : "Nenhum alerta simulado no histórico",
-    recent ? formatUptime(recent.tempoMs ?? recent.tempo ?? recent.millis) : "Nenhuma possível queda simulada ainda.");
+    recent ? "Último alerta de queda" : "Nenhum alerta no histórico",
+    recent ? formatUptime(recent.tempoMs ?? recent.tempo ?? recent.millis) : "Nenhuma possível queda registrada nesta sessão.");
 }
 
-// Os estados e eventos abaixo são EXCLUSIVAMENTE SIMULADOS.
+// Modo de apresentacao: estados e eventos locais de teste, sem sensor.
 // Nenhuma requisição externa é realizada e nada é armazenado no servidor.
 let estadoDemo = "MONITORANDO";
 let proximoNumero = 1;

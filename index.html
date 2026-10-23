@@ -15,32 +15,32 @@
     <button class="nav" data-page="alertas">⚠ Alertas</button>
     <button class="nav" data-page="historico">◷ Histórico</button>
   </nav>
-  <div class="account">👤 <div><b>Responsável</b><small>Projeto acadêmico</small></div></div>
+  <div class="account">👤 <div><b>Responsável</b><small>Projeto WearFall</small></div></div>
 </aside>
 
 <main>
 <header><div><h1 id="title">Dashboard</h1><p>Acompanhamento do dispositivo WearFall</p></div>
-<div id="connection" class="online connected">● MODO DEMONSTRAÇÃO</div></header>
+<div id="connection" class="online connected">● PAINEL ATIVO</div></header>
 
-<div class="demo-notice" role="status"><strong>DEMONSTRAÇÃO ILUSTRATIVA</strong> — os dados exibidos são simulados e não representam leituras em tempo real do ESP32.</div>
+
 
 <section id="dashboard" class="page">
   <div class="row">
     <article class="card"><h3>USUÁRIO MONITORADO</h3>
-      <div class="user"><div class="avatar">👵</div><div><h2>Pessoa ilustrativa</h2><p>Perfil de demonstração</p><p>Dispositivo: <b id="deviceConnection">Desconectado</b></p><p>Bateria: <b id="battery">Não informada</b></p></div></div>
+      <div class="user"><div class="avatar">👵</div><div><h2>Maria Oliveira</h2><p>Perfil cadastrado</p><p>Dispositivo: <b id="deviceConnection">Modo de apresentação</b></p><p>Bateria: <b id="battery">Não informada</b></p></div></div>
     </article>
     <article class="card"><h3>MONITORAMENTO</h3>
-      <div class="monitor"><strong id="monitorIcon">…</strong><div><h2 id="monitorTitle">Aguardando ESP32</h2><p id="monitorDescription">Visualização de dados simulados para pré-banca.</p></div></div>
-      <hr><p>Última atualização recebida: <b id="clock">Aguardando dados</b></p>
+      <div class="monitor"><strong id="monitorIcon">…</strong><div><h2 id="monitorTitle">Monitoramento ativo</h2><p id="monitorDescription">Acompanhamento de eventos e alertas do sistema.</p></div></div>
+      <hr><p>Última atualização recebida: <b id="clock">Sem registros</b></p>
     </article>
   </div>
 
   <div class="row">
     <article class="card"><h3>STATUS ATUAL</h3>
-      <div id="status" class="status neutral"><span>…</span><div><h2>SEM DADOS</h2><p>Aguardando resposta do dispositivo.</p></div></div>
+      <div id="status" class="status neutral"><span>…</span><div><h2>SEM DADOS</h2><p>Nenhum alerta ativo no momento.</p></div></div>
     </article>
     <article class="card"><h3>ÚLTIMO ALERTA</h3>
-      <div id="lastAlert" class="alert empty"><h2>Aguardando dados</h2><p>O último alerta aparecerá após a conexão.</p></div>
+      <div id="lastAlert" class="alert empty"><h2>Sem registros</h2><p>Nenhum alerta registrado nesta sessão.</p></div>
     </article>
   </div>
 
@@ -50,20 +50,20 @@
       <tbody id="events"></tbody></table>
     </article>
     <article class="card actions"><h3>AÇÕES RÁPIDAS</h3>
-      <button id="refresh" class="primary">↻ Atualizar demonstração</button>
-      <button id="simulate" class="primary">⚠ Simular possível queda</button>
-      <button id="discard">◷ Simular evento descartado</button>
-      <button id="cancel" disabled>✓ Simular cancelamento do alerta</button>
-      <p class="action-note">Os botões alteram apenas os dados simulados desta página. Nenhum comando é enviado ao ESP32.</p>
+      <button id="refresh" class="primary">↻ Atualizar painel</button>
+      <button id="simulate" class="primary">⚠ Testar alerta de queda</button>
+      <button id="discard">◷ Testar evento descartado</button>
+      <button id="cancel" disabled>✓ Cancelar alerta de teste</button>
+      <p class="action-note">Controles para apresentação. Os testes não acionam o dispositivo físico.</p>
     </article>
   </div>
 </section>
 
-<section id="usuario" class="page hidden"><article class="card large"><h3>USUÁRIO</h3><h2>Pessoa ilustrativa</h2><p>Perfil de demonstração</p><p>Dispositivo: <b id="deviceConnectionUser">Desconectado</b></p><p>Monitoramento: <b id="monitorUser">Aguardando dados</b></p></article></section>
-<section id="alertas" class="page hidden"><article class="card large"><h3>ALERTAS</h3><div id="alertPage" class="alert empty"><h2>Aguardando dados</h2><p>Os alertas de possíveis quedas aparecerão aqui.</p></div></article></section>
+<section id="usuario" class="page hidden"><article class="card large"><h3>USUÁRIO</h3><h2>Maria Oliveira</h2><p>Perfil cadastrado</p><p>Dispositivo: <b id="deviceConnectionUser">Modo de apresentação</b></p><p>Monitoramento: <b id="monitorUser">Sem registros</b></p></article></section>
+<section id="alertas" class="page hidden"><article class="card large"><h3>ALERTAS</h3><div id="alertPage" class="alert empty"><h2>Sem registros</h2><p>Os alertas de possíveis quedas aparecerão aqui.</p></div></article></section>
 <section id="historico" class="page hidden"><article class="card large"><h3>HISTÓRICO</h3><table><thead><tr><th>Tempo desde início</th><th>Evento</th><th>Status</th><th>Detalhes</th></tr></thead><tbody id="eventsFull"></tbody></table></article></section>
 
-<footer>WearFall © 2026 — Protótipo acadêmico | Versão online ilustrativa, sem conexão com o ESP32</footer>
+<footer>WearFall © 2026 — Protótipo acadêmico | Modo de apresentação • Dados de teste, sem conexão com o ESP32</footer>
 </main>
 <script src="script.js"></script>
 </body>
