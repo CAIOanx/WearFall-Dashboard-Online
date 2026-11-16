@@ -108,9 +108,9 @@ function updateConnection(isConnected) {
   const el = document.getElementById("connection");
   el.className = `online ${isConnected ? "connected" : "offline"}`;
   el.textContent = isConnected ? "● PAINEL ATIVO" : "● PAINEL INDISPONÍVEL";
-  setText("deviceConnection", isConnected ? "Modo de apresentação" : "Sem dados");
-  setText("deviceConnectionUser", isConnected ? "Modo de apresentação" : "Sem dados");
-  setText("monitorUser", isConnected ? "Monitorando" : "Sem dados");
+  setText("deviceConnection", isConnected ? "Sem conexão com ESP32" : "Sem dados");
+  setText("deviceConnectionUser", isConnected ? "Sem conexão com ESP32" : "Sem dados");
+  setText("monitorUser", isConnected ? "Painel disponível" : "Sem dados");
   if (!isConnected) {
     lastStatus = null;
     setText("monitorIcon", "…");
@@ -129,14 +129,14 @@ function updateStatus(data) {
   setText("battery", data.bateria === null || data.bateria === undefined ? "Não medida" : `${data.bateria}%`);
   setText("monitorIcon", alert ? "!" : "✓");
   setText("monitorTitle", alert ? "Alerta ativo" : "Monitoramento ativo");
-  setText("monitorDescription", alert ? "Possível queda identificada no teste." : `Estado atual: ${raw || "MONITORANDO"}`);
+  setText("monitorDescription", alert ? "Possível queda registrada nesta sessão." : `Estado atual: ${raw || "MONITORANDO"}`);
   document.getElementById("cancel").disabled = !alert;
   setPanel("status", alert ? "status warning" : "status normal", alert ? "⚠" : "✓",
     alert ? "POSSÍVEL QUEDA" : raw || "MONITORANDO",
-    alert ? "Alerta de teste ativado." : "Nenhum alerta ativo.");
+    alert ? "Alerta registrado nesta sessão." : "Nenhum alerta ativo.");
   setPanel("alertPage", alert ? "alert active" : "alert empty", null,
     alert ? "⚠ POSSÍVEL QUEDA DETECTADA" : "Nenhum alerta ativo",
-    alert ? "Alerta de teste ativado." : "Nenhum alerta ativo.");
+    alert ? "Alerta registrado nesta sessão." : "Nenhum alerta ativo.");
 }
 function updateLastAlert() {
   const recent = lastHistory.find(e => e.quedaConfirmada === true || e.confirmada === true);
