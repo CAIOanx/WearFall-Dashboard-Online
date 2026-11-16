@@ -37,3 +37,38 @@
 .logout-button{display:block;margin-top:9px;background:#20466e;border:1px solid #7294bc;border-radius:6px;color:#fff;padding:7px 9px;cursor:pointer;font-size:12px}
 .logout-button:hover{background:#2a5989}
 @media(max-width:480px){.login-card{padding:25px}.login-card h1{font-size:22px}}
+
+/* Pagina inicial institucional (separada do painel). */
+.home-screen{min-height:100vh;background:#f7faff;color:#142943;display:flex;flex-direction:column}
+.home-header{background:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px max(5vw,20px);border-bottom:1px solid #e1eaf4}
+.home-brand{text-decoration:none;font-size:26px;color:#071a33}.home-brand span{color:#1167d8}
+.home-nav{display:flex;gap:25px;align-items:center}
+.home-nav a{color:#274567;text-decoration:none;font-weight:600;font-size:14px}
+.home-nav a:hover{color:#1167d8}
+.home-login,.home-primary{background:#1167d8;color:#fff;border:0;border-radius:9px;padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer}
+.home-login:hover,.home-primary:hover{background:#0b55b5}
+.home-content{max-width:1200px;margin:0 auto;padding:0 25px;width:100%;flex:1}
+.home-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;padding:90px 0}
+.home-tag{font-size:12px;letter-spacing:2px;font-weight:800;color:#1167d8;margin-bottom:19px}
+.home-copy h1{font-size:clamp(38px,5vw,63px);line-height:1.12;letter-spacing:-1.5px}
+.home-copy h1 span{color:#1167d8}
+.home-copy>p:not(.home-tag){color:#62748c;font-size:18px;line-height:1.7;margin:27px 0 30px;max-width:600px}
+.home-actions{display:flex;align-items:center;gap:19px;flex-wrap:wrap}
+.home-primary{padding:15px 24px}.home-primary span{margin-left:10px}
+.home-secondary{color:#1167d8;text-decoration:none;font-weight:700;padding:12px}
+.home-feature{min-height:340px;background:linear-gradient(155deg,#071a33,#1158aa);border-radius:25px;color:#fff;padding:45px;box-shadow:0 20px 55px #13375b33;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:15px}
+.feature-emblem{font-size:56px;color:#83baff}.home-feature h2{font-size:34px}.home-feature>p{color:#c8dcf8;margin-bottom:9px}
+.home-feature-chip{padding:11px 16px;background:#ffffff1c;border:1px solid #ffffff25;border-radius:11px;width:100%;font-weight:600}
+.home-feature-chip span{color:#88efc1;margin-right:9px}
+.home-about{text-align:center;padding:50px 20px 60px;max-width:770px;margin:0 auto}
+.home-about h2{font-size:clamp(26px,3vw,37px);margin-bottom:17px}.home-about>p:last-child{font-size:16px;color:#62748c;line-height:1.8}
+.home-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 0 75px}
+.home-benefits article{background:#fff;border:1px solid #e3ebf5;border-radius:16px;padding:26px;box-shadow:0 4px 16px #122c4b08}
+.home-benefits article>span{display:inline-grid;place-items:center;background:#e7f1ff;color:#1167d8;border-radius:12px;width:45px;height:45px;font-size:26px;margin-bottom:16px}
+.home-benefits h3{font-size:17px;margin-bottom:10px}.home-benefits p{font-size:14px;color:#62748c;line-height:1.6}
+.home-footer{text-align:center;padding:21px;border-top:1px solid #dfe8f4;color:#62748c;font-size:12px}
+.back-home{border:0;background:none;color:#1167d8;font-weight:700;cursor:pointer;padding:0 0 24px;font-size:13px}
+.login-helper{font-size:12px;line-height:1.45;color:#66768a}
+.home-login:focus-visible,.home-primary:focus-visible,.home-secondary:focus-visible,.back-home:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+@media(max-width:850px){.home-hero{grid-template-columns:1fr;padding:62px 0;gap:35px}.home-feature{min-height:245px}.home-benefits{grid-template-columns:1fr}}
+@media(max-width:550px){.home-header{flex-wrap:wrap;justify-content:center}.home-nav{gap:13px;flex-wrap:wrap;justify-content:center}.home-nav a{font-size:12px}.home-hero{padding:45px 0}.home-copy>p:not(.home-tag){font-size:16px}.home-feature{padding:28px}.home-benefits{padding-bottom:45px}}
