@@ -11,18 +11,13 @@ Interface web de apresentação do projeto acadêmico **WearFall**, voltado ao a
 
 > **Importante:** este site é uma apresentação. O formulário de entrada não faz autenticação real, não há banco de dados online e os eventos não são transmitidos pelo ESP32. **Não use dados ou senhas reais no formulário.**
 
-## Publicar no GitHub Pages
+## Acesso ao site demonstrativo
 
-Este repositório contém `index.html`, `style.css` e `script.js` na raiz, prontos para hospedagem estática.
+[**Abrir apresentação do WearFall**](https://caioanx.github.io/WearFall-Dashboard-Online/)
 
-1. Abra **Settings → Pages** neste repositório.
-2. Em **Build and deployment**, selecione **Deploy from a branch**.
-3. Escolha a branch **main**, a pasta **/(root)** e clique em **Save**.
-4. Aguarde a indicação de publicação na página **Settings → Pages**.
+Este endereço foi informado como acessível pelo responsável pelo projeto. A publicação usa arquivos estáticos do repositório. Mudanças em `index.html`, `style.css` e `script.js` na branch publicada aparecem no site após o processamento da hospedagem.
 
-Endereço esperado após a publicação: `https://caioanx.github.io/WearFall-Dashboard-Online/`
-
-Se a opção de publicação não estiver disponível, confira as permissões e configurações do repositório.
+Para verificar ou alterar a publicação, acesse **Settings → Pages** e confira a origem selecionada.
 
 ## Protótipo físico
 
