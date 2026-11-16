@@ -8,17 +8,35 @@ loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!loginForm.reportValidity()) return;
   demoPassword.value = "";
+  homeScreen.hidden = true;
   loginScreen.hidden = true;
   appShell.hidden = false;
   document.getElementById("logout").focus();
 });
 document.getElementById("logout").addEventListener("click", () => {
-  appShell.hidden = true;
-  loginScreen.hidden = false;
-  loginForm.reset();
   demoPassword.value = "";
-  document.getElementById("demo-email").focus();
+  showHome();
 });
+
+// Fluxo de paginas: inicio publico -> formulario de entrada -> painel.
+const homeScreen = document.getElementById("home-screen");
+function showHome() {
+  homeScreen.hidden = false;
+  loginScreen.hidden = true;
+  appShell.hidden = true;
+  loginForm.reset();
+  window.scrollTo(0, 0);
+}
+function showLogin() {
+  homeScreen.hidden = true;
+  loginScreen.hidden = false;
+  appShell.hidden = true;
+  window.scrollTo(0, 0);
+  document.getElementById("demo-email").focus();
+}
+document.getElementById("open-login").addEventListener("click", showLogin);
+document.getElementById("hero-login").addEventListener("click", showLogin);
+document.getElementById("back-home").addEventListener("click", showHome);
 
 const navs = document.querySelectorAll(".nav");
 const pages = document.querySelectorAll(".page");
