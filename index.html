@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<section id="login-screen" class="login-screen" aria-labelledby="login-title">
+  <div class="login-card">
+    <div class="login-logo">◉ <b>Wear<span>Fall</span></b></div>
+    <p class="login-eyebrow">Portal do responsável</p>
+    <h1 id="login-title">Bem-vindo ao WearFall</h1>
+    <p class="login-subtitle">Visualização demonstrativa do futuro acesso ao monitoramento.</p>
+    <form id="login-form">
+      <label for="demo-email">E-mail de exemplo</label>
+      <input id="demo-email" type="email" value="responsavel@exemplo.com" autocomplete="off" required>
+      <label for="demo-password">Senha fictícia</label>
+      <input id="demo-password" type="password" placeholder="Digite uma senha fictícia" autocomplete="off" required>
+      <button type="submit" class="login-submit">Entrar na demonstração</button>
+    </form>
+    <p class="login-warning"><b>Ambiente de demonstração.</b> Não utilize senhas reais. Esta tela não autentica usuários nem protege informações: os dados e alertas do painel são simulados.</p>
+  </div>
+</section>
+<div id="app-shell" hidden>
 <aside class="sidebar">
   <div class="brand">◉ <b>Wear<span>Fall</span></b></div>
   <nav>
@@ -15,7 +32,7 @@
     <button class="nav" data-page="alertas">⚠ Alertas</button>
     <button class="nav" data-page="historico">◷ Histórico</button>
   </nav>
-  <div class="account">👤 <div><b>Responsável</b><small>Projeto WearFall</small></div></div>
+  <div class="account">👤 <div><b>Responsável</b><small>Projeto WearFall</small><button id="logout" type="button" class="logout-button">Sair da demonstração</button></div></div>
 </aside>
 
 <main>
@@ -65,6 +82,7 @@
 
 <footer>WearFall © 2026 — Protótipo acadêmico | Modo de apresentação • Dados de teste, sem conexão com o ESP32</footer>
 </main>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
