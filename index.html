@@ -3,14 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WearFall | Dashboard</title>
+  <title>WearFall | Monitoramento de quedas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<section id="login-screen" class="login-screen" aria-labelledby="login-title">
+<section id="home-screen" class="home-screen" aria-label="Página inicial WearFall">
+  <header class="home-header">
+    <a href="#inicio" class="home-brand" aria-label="WearFall, início">◉ <strong>Wear<span>Fall</span></strong></a>
+    <nav class="home-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <button id="open-login" type="button" class="home-login">Entrar</button>
+    </nav>
+  </header>
+  <main class="home-content" id="inicio">
+    <section class="home-hero">
+      <div class="home-copy">
+        <p class="home-tag">TECNOLOGIA PARA O CUIDADO</p>
+        <h1>Mais atenção. <span>Mais tranquilidade.</span></h1>
+        <p>O WearFall utiliza sensores de movimento e um sistema de alertas para acompanhar eventos compatíveis com quedas.</p>
+        <div class="home-actions">
+          <button id="hero-login" class="home-primary" type="button">Acessar painel <span aria-hidden="true">→</span></button>
+          <a class="home-secondary" href="#sobre">Conheça o projeto</a>
+        </div>
+      </div>
+      <div class="home-feature" aria-label="Visão geral das funcionalidades">
+        <div class="feature-emblem" aria-hidden="true">◉</div>
+        <h2>WearFall</h2>
+        <p>Detecção inteligente de quedas</p>
+        <div class="home-feature-chip"><span aria-hidden="true">✓</span> Monitoramento</div>
+        <div class="home-feature-chip"><span aria-hidden="true">✓</span> Alertas e histórico</div>
+      </div>
+    </section>
+    <section id="sobre" class="home-about">
+      <p class="home-tag">NOSSA PROPOSTA</p>
+      <h2>Monitoramento pensado para o dia a dia</h2>
+      <p>O projeto analisa aceleração, impacto, rotação, postura e imobilidade para identificar situações que merecem atenção. O protótipo físico já conta com alertas locais e consulta de histórico.</p>
+    </section>
+    <section id="funcionalidades" class="home-benefits" aria-label="Funcionalidades">
+      <article><span aria-hidden="true">◈</span><h3>Detecção de quedas</h3><p>Análise de diferentes sinais de movimento.</p></article>
+      <article><span aria-hidden="true">♢</span><h3>Alertas</h3><p>Avisos para facilitar a identificação de eventos.</p></article>
+      <article><span aria-hidden="true">▤</span><h3>Histórico</h3><p>Consulta organizada das ocorrências registradas.</p></article>
+    </section>
+  </main>
+  <footer class="home-footer">WearFall © 2026 · Projeto acadêmico em desenvolvimento</footer>
+</section>
+<section id="login-screen" hidden class="login-screen" aria-labelledby="login-title">
   <div class="login-card">
     <div class="login-logo">◉ <b>Wear<span>Fall</span></b></div>
     
+    <button id="back-home" type="button" class="back-home">← Voltar ao início</button>
     <h1 id="login-title">Entrar</h1>
     
     <form id="login-form">
@@ -18,6 +60,7 @@
       <input id="demo-email" type="email" placeholder="seuemail@exemplo.com" autocomplete="off" required>
       <label for="demo-password">Senha</label>
       <input id="demo-password" type="password" placeholder="Digite sua senha" autocomplete="off" required>
+      <p class="login-helper">Acesso de apresentação: utilize apenas informações de exemplo.</p>
       <button type="submit" class="login-submit">Entrar</button>
     </form>
   </div>
