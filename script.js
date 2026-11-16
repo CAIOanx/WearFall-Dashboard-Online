@@ -1,3 +1,25 @@
+// Fluxo visual de entrada: nao existe verificacao de credenciais.
+// Nao armazenar nem enviar o e-mail ou a senha de exemplo.
+const loginScreen = document.getElementById("login-screen");
+const appShell = document.getElementById("app-shell");
+const loginForm = document.getElementById("login-form");
+const demoPassword = document.getElementById("demo-password");
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!loginForm.reportValidity()) return;
+  demoPassword.value = "";
+  loginScreen.hidden = true;
+  appShell.hidden = false;
+  document.getElementById("logout").focus();
+});
+document.getElementById("logout").addEventListener("click", () => {
+  appShell.hidden = true;
+  loginScreen.hidden = false;
+  loginForm.reset();
+  demoPassword.value = "";
+  document.getElementById("demo-email").focus();
+});
+
 const navs = document.querySelectorAll(".nav");
 const pages = document.querySelectorAll(".page");
 const title = document.getElementById("title");
