@@ -12,15 +12,15 @@
     <div class="login-logo">◉ <b>Wear<span>Fall</span></b></div>
     <p class="login-eyebrow">Portal do responsável</p>
     <h1 id="login-title">Bem-vindo ao WearFall</h1>
-    <p class="login-subtitle">Visualização demonstrativa do futuro acesso ao monitoramento.</p>
+    <p class="login-subtitle">Acompanhe o monitoramento, os alertas e o histórico do WearFall.</p>
     <form id="login-form">
-      <label for="demo-email">E-mail de exemplo</label>
+      <label for="demo-email">E-mail</label>
       <input id="demo-email" type="email" value="responsavel@exemplo.com" autocomplete="off" required>
-      <label for="demo-password">Senha fictícia</label>
-      <input id="demo-password" type="password" placeholder="Digite uma senha fictícia" autocomplete="off" required>
-      <button type="submit" class="login-submit">Entrar na demonstração</button>
+      <label for="demo-password">Senha</label>
+      <input id="demo-password" type="password" placeholder="Digite uma senha de exemplo" autocomplete="off" required>
+      <button type="submit" class="login-submit">Entrar</button>
     </form>
-    <p class="login-warning"><b>Ambiente de demonstração.</b> Não utilize senhas reais. Esta tela não autentica usuários nem protege informações: os dados e alertas do painel são simulados.</p>
+    <p class="login-warning">Prévia do sistema: acesso sem autenticação real. Use somente dados fictícios.</p>
   </div>
 </section>
 <div id="app-shell" hidden>
@@ -32,7 +32,7 @@
     <button class="nav" data-page="alertas">⚠ Alertas</button>
     <button class="nav" data-page="historico">◷ Histórico</button>
   </nav>
-  <div class="account">👤 <div><b>Responsável</b><small>Projeto WearFall</small><button id="logout" type="button" class="logout-button">Sair da demonstração</button></div></div>
+  <div class="account">👤 <div><b>Responsável</b><small>Projeto WearFall</small><button id="logout" type="button" class="logout-button">Sair</button></div></div>
 </aside>
 
 <main>
@@ -44,7 +44,7 @@
 <section id="dashboard" class="page">
   <div class="row">
     <article class="card"><h3>USUÁRIO MONITORADO</h3>
-      <div class="user"><div class="avatar">👵</div><div><h2>Maria Oliveira</h2><p>Perfil cadastrado</p><p>Dispositivo: <b id="deviceConnection">Modo de apresentação</b></p><p>Bateria: <b id="battery">Não informada</b></p></div></div>
+      <div class="user"><div class="avatar">👵</div><div><h2>Maria Oliveira</h2><p>Perfil cadastrado</p><p>Dispositivo: <b id="deviceConnection">Sem conexão com ESP32</b></p><p>Bateria: <b id="battery">Não informada</b></p></div></div>
     </article>
     <article class="card"><h3>MONITORAMENTO</h3>
       <div class="monitor"><strong id="monitorIcon">…</strong><div><h2 id="monitorTitle">Monitoramento ativo</h2><p id="monitorDescription">Acompanhamento de eventos e alertas do sistema.</p></div></div>
@@ -68,19 +68,19 @@
     </article>
     <article class="card actions"><h3>AÇÕES RÁPIDAS</h3>
       <button id="refresh" class="primary">↻ Atualizar painel</button>
-      <button id="simulate" class="primary">⚠ Testar alerta de queda</button>
-      <button id="discard">◷ Testar evento descartado</button>
-      <button id="cancel" disabled>✓ Cancelar alerta de teste</button>
-      <p class="action-note">Controles para apresentação. Os testes não acionam o dispositivo físico.</p>
+      <button id="simulate" class="primary">⚠ Simular queda</button>
+      <button id="discard">◷ Simular evento descartado</button>
+      <button id="cancel" disabled>✓ Cancelar alerta</button>
+      <p class="action-note">Os controles desta página geram eventos de exemplo.</p>
     </article>
   </div>
 </section>
 
-<section id="usuario" class="page hidden"><article class="card large"><h3>USUÁRIO</h3><h2>Maria Oliveira</h2><p>Perfil cadastrado</p><p>Dispositivo: <b id="deviceConnectionUser">Modo de apresentação</b></p><p>Monitoramento: <b id="monitorUser">Sem registros</b></p></article></section>
+<section id="usuario" class="page hidden"><article class="card large"><h3>USUÁRIO</h3><h2>Maria Oliveira</h2><p>Perfil cadastrado</p><p>Dispositivo: <b id="deviceConnectionUser">Sem conexão com ESP32</b></p><p>Monitoramento: <b id="monitorUser">Sem registros</b></p></article></section>
 <section id="alertas" class="page hidden"><article class="card large"><h3>ALERTAS</h3><div id="alertPage" class="alert empty"><h2>Sem registros</h2><p>Os alertas de possíveis quedas aparecerão aqui.</p></div></article></section>
 <section id="historico" class="page hidden"><article class="card large"><h3>HISTÓRICO</h3><table><thead><tr><th>Tempo desde início</th><th>Evento</th><th>Status</th><th>Detalhes</th></tr></thead><tbody id="eventsFull"></tbody></table></article></section>
 
-<footer>WearFall © 2026 — Protótipo acadêmico | Modo de apresentação • Dados de teste, sem conexão com o ESP32</footer>
+<footer>WearFall © 2026 — Protótipo acadêmico · Dados simulados · Sem conexão com ESP32</footer>
 </main>
 </div>
 <script src="script.js"></script>
