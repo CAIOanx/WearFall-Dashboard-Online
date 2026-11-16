@@ -10,17 +10,16 @@
 <section id="login-screen" class="login-screen" aria-labelledby="login-title">
   <div class="login-card">
     <div class="login-logo">◉ <b>Wear<span>Fall</span></b></div>
-    <p class="login-eyebrow">Portal do responsável</p>
-    <h1 id="login-title">Bem-vindo ao WearFall</h1>
-    <p class="login-subtitle">Acompanhe o monitoramento, os alertas e o histórico do WearFall.</p>
+    
+    <h1 id="login-title">Entrar</h1>
+    
     <form id="login-form">
       <label for="demo-email">E-mail</label>
-      <input id="demo-email" type="email" value="responsavel@exemplo.com" autocomplete="off" required>
+      <input id="demo-email" type="email" placeholder="seuemail@exemplo.com" autocomplete="off" required>
       <label for="demo-password">Senha</label>
-      <input id="demo-password" type="password" placeholder="Digite uma senha de exemplo" autocomplete="off" required>
+      <input id="demo-password" type="password" placeholder="Digite sua senha" autocomplete="off" required>
       <button type="submit" class="login-submit">Entrar</button>
     </form>
-    <p class="login-warning">Prévia do sistema: acesso sem autenticação real. Use somente dados fictícios.</p>
   </div>
 </section>
 <div id="app-shell" hidden>
@@ -37,7 +36,7 @@
 
 <main>
 <header><div><h1 id="title">Dashboard</h1><p>Acompanhamento do dispositivo WearFall</p></div>
-<div id="connection" class="online connected">● PAINEL ATIVO</div></header>
+<div id="connection" class="online connected">● PAINEL DE TESTES</div></header>
 
 
 
@@ -71,7 +70,7 @@
       <button id="simulate" class="primary">⚠ Simular queda</button>
       <button id="discard">◷ Simular evento descartado</button>
       <button id="cancel" disabled>✓ Cancelar alerta</button>
-      <p class="action-note">Os controles desta página geram eventos de exemplo.</p>
+      
     </article>
   </div>
 </section>
@@ -80,7 +79,7 @@
 <section id="alertas" class="page hidden"><article class="card large"><h3>ALERTAS</h3><div id="alertPage" class="alert empty"><h2>Sem registros</h2><p>Os alertas de possíveis quedas aparecerão aqui.</p></div></article></section>
 <section id="historico" class="page hidden"><article class="card large"><h3>HISTÓRICO</h3><table><thead><tr><th>Tempo desde início</th><th>Evento</th><th>Status</th><th>Detalhes</th></tr></thead><tbody id="eventsFull"></tbody></table></article></section>
 
-<footer>WearFall © 2026 — Protótipo acadêmico · Dados simulados · Sem conexão com ESP32</footer>
+<footer>WearFall © 2026 — Protótipo acadêmico</footer>
 </main>
 </div>
 <script src="script.js"></script>
