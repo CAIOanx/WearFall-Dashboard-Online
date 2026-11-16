@@ -123,9 +123,6 @@ function setPanel(id, className, symbol, heading, description) {
 }
 function updateConnection(isConnected) {
   online = isConnected;
-  const el = document.getElementById("connection");
-  el.className = `online ${isConnected ? "connected" : "offline"}`;
-  el.textContent = isConnected ? "● PAINEL DE TESTES" : "● PAINEL INDISPONÍVEL";
   setText("deviceConnection", isConnected ? "Sem conexão com ESP32" : "Sem dados");
   setText("deviceConnectionUser", isConnected ? "Sem conexão com ESP32" : "Sem dados");
   setText("monitorUser", isConnected ? "Painel disponível" : "Sem dados");
